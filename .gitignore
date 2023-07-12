@@ -46,6 +46,7 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
+*.idea
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -70,3 +71,13 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/SineVFX
+Assets/SineVFX.meta
+Assets/Plugins/3D/LowPolyDungeonsLite/LowPolyDungeonsLite_HDRP_2018.4.unitypackage.meta
+Assets/Plugins/3D/LowPolyDungeonsLite/LowPolyDungeonsLite_LWRP_2018.4.unitypackage.meta
+Assets/Plugins/3D/LowPolyDungeonsLite/LowPolyDungeonsLite_URP_2019.3.unitypackage.meta
+Assets/Plugins/3D/SimpleNaturePack/SimpleNaturePack_HDRP_2018.4_v1.22.unitypackage.meta
+Assets/Plugins/3D/SimpleNaturePack/SimpleNaturePack_LWRP_2018.4_v1.22.unitypackage.meta
+Assets/Plugins/3D/SimpleNaturePack/SimpleNaturePack_URP_2019.3_v1.22.unitypackage.meta
+ProjectSettings/Packages/com.unity.probuilder/Settings.json
+*.unitypackage.meta
