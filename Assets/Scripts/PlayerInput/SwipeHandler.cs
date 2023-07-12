@@ -6,7 +6,7 @@ namespace PlayerInput
     public class SwipeHandler : MonoBehaviour
     {
         private Vector2 _touchStartPosition;
-        public Action<Direction> OnSwipped { get; set; }
+        public Action<Direction> OnSwiped { get; set; }
 
         private void Update()
         {
@@ -23,8 +23,9 @@ namespace PlayerInput
                 case TouchPhase.Moved:
                     Vector2 swipeDirection = touch.position - _touchStartPosition;
                     swipeDirection.Normalize();
-
-                    OnSwipped?.Invoke(swipeDirection.x > 0 ? Direction.Right : Direction.Left);
+                    
+                    Debug.Log($"Swipe direction: {swipeDirection.x}");
+                    OnSwiped?.Invoke(swipeDirection.x > 0 ? Direction.Right : Direction.Left);
 
                     _touchStartPosition = touch.position;
                     break;
