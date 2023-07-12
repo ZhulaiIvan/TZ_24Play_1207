@@ -29,6 +29,7 @@ namespace Items
         private void Swiped(Direction direction)
         {
             _swipeForce = direction == Direction.Left ? -_speed : _speed;
+            _rigidbody.AddForce(_swipeForce * Vector3.right, ForceMode.VelocityChange);
         }
 
         private void Awake()
@@ -38,7 +39,6 @@ namespace Items
 
         private void FixedUpdate()
         {
-            _rigidbody.AddForce(_swipeForce * Vector3.right, ForceMode.VelocityChange);
             _rigidbody.velocity = Vector3.forward * _speed;
         }
 
