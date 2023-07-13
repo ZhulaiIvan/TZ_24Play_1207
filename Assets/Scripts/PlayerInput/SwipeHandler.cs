@@ -26,7 +26,6 @@ namespace PlayerInput
                     Vector2 swipeDirection = touch.position - _touchStartPosition;
                     swipeDirection.Normalize();
                     
-                    Debug.Log($"Swipe direction: {swipeDirection.x}");
                     OnSwiped?.Invoke(swipeDirection.x > 0 ? Direction.Right : Direction.Left, _sensitivity);
 
                     _touchStartPosition = touch.position;
