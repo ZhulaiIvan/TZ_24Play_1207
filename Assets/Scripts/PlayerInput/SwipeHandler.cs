@@ -5,8 +5,10 @@ namespace PlayerInput
 {
     public class SwipeHandler : MonoBehaviour
     {
+        [SerializeField] private float _sensitivity = 3f; // TODO: settings screen
+        
         private Vector2 _touchStartPosition;
-        public Action<Direction> OnSwiped { get; set; }
+        public Action<Direction, float> OnSwiped { get; set; }
 
         private void Update()
         {
@@ -25,7 +27,7 @@ namespace PlayerInput
                     swipeDirection.Normalize();
                     
                     Debug.Log($"Swipe direction: {swipeDirection.x}");
-                    OnSwiped?.Invoke(swipeDirection.x > 0 ? Direction.Right : Direction.Left);
+                    OnSwiped?.Invoke(swipeDirection.x > 0 ? Direction.Right : Direction.Left, _sensitivity);
 
                     _touchStartPosition = touch.position;
                     break;

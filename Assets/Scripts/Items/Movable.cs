@@ -26,9 +26,9 @@ namespace Items
             _minX = limits.MinX + transform.localScale.x / 2;
         }
 
-        private void Swiped(Direction direction)
+        private void Swiped(Direction direction, float sensitivity)
         {
-            _swipeForce = direction == Direction.Left ? -_speed : _speed;
+            _swipeForce = direction == Direction.Left ? -sensitivity : sensitivity;
             _rigidbody.AddForce(_swipeForce * Vector3.right, ForceMode.VelocityChange);
         }
 
