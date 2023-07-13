@@ -1,4 +1,4 @@
-using PlayerInput;
+using Player;
 using UnityEngine;
 using Zenject;
 

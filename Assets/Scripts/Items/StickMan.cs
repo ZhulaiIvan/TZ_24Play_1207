@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Items
 {
-    public class StickMan : Movable
+    public class StickMan : Colliding
     {
         private void OnCollisionEnter(Collision collision)
         {

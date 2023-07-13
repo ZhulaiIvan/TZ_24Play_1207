@@ -1,5 +1,4 @@
-﻿using PlayerInput;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Environment
 {

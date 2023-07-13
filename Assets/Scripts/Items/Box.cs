@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Items
 {
-    public class Box : Movable
+    public class Box : Colliding
     {
         private void OnCollisionEnter(Collision collision)
         {
-            // TODO: if wall - destroy component from obj
+            // TODO: remove box after 2 seconds
         }
     }
 }

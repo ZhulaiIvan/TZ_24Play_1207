@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace PlayerInput
+namespace Player
 {
     public class SwipeHandler : MonoBehaviour
     {
