@@ -23,14 +23,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522517016063730602}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.54200006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7885576064885773956}
-  m_Father: {fileID: 832749218672296684}
-  m_RootOrder: 2
+  m_Father: {fileID: 2076399478334519667}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1385565267623568223
 GameObject:
@@ -124,8 +124,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2076399478334519667}
-  - component: {fileID: 477072375}
-  - component: {fileID: 477072376}
+  - component: {fileID: 7064053952384046579}
+  - component: {fileID: 1272428868826889102}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -146,10 +146,24 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 832749218672296684}
+  - {fileID: 2410733533148739645}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!143 &477072375
+--- !u!114 &7064053952384046579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076399478334519671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46473465de749bc4ea1ae12e134487d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 7
+--- !u!143 &1272428868826889102
 CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,20 +180,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 2, z: 0}
---- !u!114 &477072376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2076399478334519671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46473465de749bc4ea1ae12e134487d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 8
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3831991006285222695
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +192,7 @@ GameObject:
   - component: {fileID: 7885576064885773956}
   - component: {fileID: 1536039500}
   - component: {fileID: 1536039498}
-  - component: {fileID: 8273084311784698772}
+  - component: {fileID: 8082575831660897344}
   m_Layer: 0
   m_Name: PlayerCube
   m_TagString: Untagged
@@ -244,7 +245,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8273084311784698772
+--- !u!114 &8082575831660897344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -367,19 +368,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8993269104018297628}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &6134733724983902066
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832749218672533134}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &4183102079081512593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,3 +380,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00fcc1fc829845df98fbbc0b08d91bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &6067330852119403092
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832749218672533134}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.7930446, z: 1}
+  m_Center: {x: -0, y: 0.9004841, z: -0}
