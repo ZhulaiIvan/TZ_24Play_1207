@@ -30,8 +30,8 @@ namespace Environment
 
             platform.SetTargetPosition(new Vector3(
                 _lastPlatform.MaxPosition.x - platformScale.x / 2,
-                _lastPlatform.MaxPosition.y,
-                _lastPlatform.MaxPosition.z));
+                _lastPlatform.MaxPosition.y - platformScale.y / 2,
+                _lastPlatform.MaxPosition.z + platformScale.z / 2));
 
             _platforms.Add(platform);
 
@@ -43,7 +43,7 @@ namespace Environment
 
         private void RemovePlatform()
         {
-            if (_platforms.Count <= 5) return;
+            if (_platforms.Count <= 7) return;
 
             _platforms[0].TriggerZone.OnTriggered -= SpawnPlatform;
             Destroy(_platforms[0].gameObject);

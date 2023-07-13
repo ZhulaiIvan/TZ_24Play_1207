@@ -7,7 +7,10 @@ namespace Items
     {
         private void OnCollisionEnter(Collision collision)
         {
-            // TODO: remove box after 2 seconds
+            if(collision.gameObject.TryGetComponent(out Wall wall))
+            {
+                transform.SetParent(wall.transform);
+            }
         }
     }
 }
