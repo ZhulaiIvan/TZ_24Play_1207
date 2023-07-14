@@ -1,4 +1,3 @@
-using System;
 using Environment;
 using UnityEngine;
 using Zenject;

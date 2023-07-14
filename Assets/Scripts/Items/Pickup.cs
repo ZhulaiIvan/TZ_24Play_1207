@@ -1,6 +1,6 @@
 namespace Items
 {
-    public class Pickup : Colliding
+    public class Pickup : CollidingItem
     {
     }
 }

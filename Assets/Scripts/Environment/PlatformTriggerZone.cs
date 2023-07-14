@@ -1,6 +1,5 @@
 ﻿using System;
 using Items;
-using Player;
 using UnityEngine;
 
 namespace Environment

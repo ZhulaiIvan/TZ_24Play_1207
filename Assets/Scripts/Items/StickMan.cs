@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 namespace Items
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class StickMan : Colliding
+    public class StickMan : CollidingItem
     {
         private void OnCollisionEnter(Collision collision)
         {

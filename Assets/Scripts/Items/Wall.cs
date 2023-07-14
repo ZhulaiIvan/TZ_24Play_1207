@@ -1,8 +1,6 @@
-﻿using UnityEngine;
-
-namespace Items
+﻿namespace Items
 {
-    public class Wall : Colliding
+    public class Wall : CollidingItem
     {
     }
 }
