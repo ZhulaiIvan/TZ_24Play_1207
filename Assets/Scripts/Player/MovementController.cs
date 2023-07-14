@@ -1,3 +1,4 @@
+using Core;
 using Environment;
 using UnityEngine;
 using Zenject;
@@ -14,6 +15,7 @@ namespace Player
         private SwipeHandler _swipeHandler;
         private float _minX;
         private float _maxX;
+        private float _currentSpeed;
         
         [Inject]
         public void Construct(SwipeHandler swipeHandler, MovementLimits limits)
@@ -32,7 +34,7 @@ namespace Player
 
         private void FixedUpdate()
         {
-            _controller.Move(Vector3.forward * _speed * Time.deltaTime);
+            _controller.Move(Vector3.forward * _currentSpeed * Time.deltaTime);
         }
 
         private void Swiped(Direction direction, float sensitivity)
@@ -42,6 +44,17 @@ namespace Player
         
             float force = direction == Direction.Left ? -sensitivity : sensitivity;
             _controller.Move(force * Vector3.right * Time.deltaTime);
+        }
+
+        public void SetState(AppState state)
+        {
+            _currentSpeed = state switch
+            {
+                AppState.Menu => 0f,
+                AppState.Game => _speed,
+                AppState.Lose => 0f,
+                _ => _currentSpeed
+            };
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Core;
 using UnityEngine;
 
 namespace Player
@@ -8,11 +9,12 @@ namespace Player
         [SerializeField] private float _sensitivity = 3f; // TODO: settings screen
         
         private Vector2 _touchStartPosition;
+        private AppState _currentState;
         public Action<Direction, float> OnSwiped { get; set; }
 
         private void Update()
         {
-            if (Input.touchCount <= 0) return;
+            if (Input.touchCount <= 0 || _currentState == AppState.Game) return;
 
             Touch touch = Input.GetTouch(0);
 
@@ -31,6 +33,11 @@ namespace Player
                     _touchStartPosition = touch.position;
                     break;
             }
+        }
+
+        public void SetState(AppState state)
+        {
+            _currentState = state;
         }
     }
 
