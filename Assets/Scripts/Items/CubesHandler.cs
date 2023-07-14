@@ -43,12 +43,18 @@ namespace Items
         {
             PlayerCube playerCube = Instantiate(_playerCubePrefab, transform);
             Subscribe(playerCube);
-            
-            playerCube.transform.position = _cubes.Last().transform.position + Vector3.up;
+
+            playerCube.transform.position = GetNewPosition();
             _cubes.Add(playerCube);
-            _stickMan.transform.position = _cubes.Last().transform.position + Vector3.up;
+            _stickMan.transform.position = GetNewPosition();
         }
 
+        private Vector3 GetNewPosition()
+        {
+            return _cubes.Last().transform.position 
+                   + _cubes.Last().transform.localScale.y * Vector3.up;
+        }
+        
         private void OnDestroy()
         {
             _cubes.ForEach(Unsubscribe);

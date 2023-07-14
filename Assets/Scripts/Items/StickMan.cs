@@ -1,9 +1,9 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Items
 {
+    [RequireComponent(typeof(Rigidbody))]
     public class StickMan : Colliding
     {
         private void OnCollisionEnter(Collision collision)

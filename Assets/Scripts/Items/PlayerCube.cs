@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Items
@@ -13,8 +14,17 @@ namespace Items
         {
             if (collision.gameObject.TryGetComponent(out Wall wall) &&
                 Math.Abs(transform.position.y - wall.transform.position.y) < 1f
-                && Math.Abs(transform.position.x - wall.transform.position.x) < 0.5f)
+                && Math.Abs(transform.position.x - wall.transform.position.x) < 1f)
+            {
                 OnCollision?.Invoke(this);
+                StartCoroutine(DestroyCube());
+            }
+        }
+
+        private IEnumerator DestroyCube()
+        {
+            yield return new WaitForSeconds(2f);
+            Destroy(gameObject);
         }
 
         private void OnTriggerEnter(Collider other)
