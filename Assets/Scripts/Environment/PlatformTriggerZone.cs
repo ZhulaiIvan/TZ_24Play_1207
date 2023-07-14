@@ -11,7 +11,7 @@ namespace Environment
 
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.TryGetComponent(out MovementController _)) return;
+            if (!other.TryGetComponent(out StickMan _)) return;
 
             OnTriggered?.Invoke();
         }

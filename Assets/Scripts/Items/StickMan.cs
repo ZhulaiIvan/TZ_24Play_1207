@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Items
 {
@@ -7,7 +8,8 @@ namespace Items
     {
         private void OnCollisionEnter(Collision collision)
         {
-            // TODO: if wall - lose
+            if (collision.gameObject.TryGetComponent(out Wall _))
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

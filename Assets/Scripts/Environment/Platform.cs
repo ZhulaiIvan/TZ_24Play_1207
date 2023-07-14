@@ -7,10 +7,11 @@ namespace Environment
     {
         [SerializeField] private Renderer _renderer;
         [SerializeField] private float _moveSpeed;
+        [SerializeField] private PlatformTriggerZone _triggerZone;
 
         private Vector3 _targetPosition = default;
         private bool _isMoving;
-        private PlatformTriggerZone _triggerZone;
+       
         public Vector3 MaxPosition => _renderer.bounds.max;
 
         public PlatformTriggerZone TriggerZone
@@ -32,7 +33,8 @@ namespace Environment
 
         private void OnEnable()
         {
-            _triggerZone = GetComponentInChildren<PlatformTriggerZone>();
+            if(_triggerZone == null)
+                _triggerZone = GetComponentInChildren<PlatformTriggerZone>();
         }
 
         private void Update()
