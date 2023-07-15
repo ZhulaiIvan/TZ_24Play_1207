@@ -1,18 +1,20 @@
-using System;
 using System.Linq;
 using Core;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace Items
 {
-    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(Rigidbody), typeof(Animator))]
     public class StickMan : CollidingItem
     {
         private AppCore _core;
         private Rigidbody[] _rigidbodies;
         private Collider[] _colliders;
+
+        private Rigidbody _parentRigidbody;
+        private Collider _parentCollider;
+        private Animator _animator;
 
         [Inject]
         public void Construct(AppCore core)
@@ -26,25 +28,24 @@ namespace Items
                 .Where(g => g.gameObject != gameObject)
                 .ToArray();
 
-            DisableRagdoll();
+            _parentCollider = GetComponent<Collider>();
+            _parentRigidbody = GetComponent<Rigidbody>();
+            _animator = GetComponent<Animator>();
+            
+            EnableRagdoll(false);
         }
 
-        private void DisableRagdoll()
+        private void EnableRagdoll(bool state)
         {
+            _parentCollider.enabled = !state;
+            _parentRigidbody.isKinematic = state;
+            _animator.enabled = !state;
+            
             foreach (Rigidbody rigidbody in _rigidbodies)
-                rigidbody.isKinematic = true;
+                rigidbody.isKinematic = !state;
 
             foreach (Collider collider in _colliders)
-                collider.enabled = false;
-        }
-
-        private void EnableRagdoll()
-        {
-            foreach (Rigidbody rigidbody in _rigidbodies)
-                rigidbody.isKinematic = false;
-
-            foreach (Collider collider in _colliders)
-                collider.enabled = true;
+                collider.enabled = state;
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -52,7 +53,7 @@ namespace Items
             if (collision.gameObject.TryGetComponent(out Wall _))
             {
                 _core.UpdateState(AppState.Lose);
-                EnableRagdoll();
+                EnableRagdoll(true);
             }
         }
     }

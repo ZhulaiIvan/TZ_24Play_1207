@@ -1,3 +1,4 @@
+using Cinemachine;
 using Core;
 using Environment;
 using UnityEngine;
@@ -10,6 +11,8 @@ namespace Player
     public class MovementController : MonoBehaviour
     {
         [SerializeField] private float _speed = 7f;
+        [SerializeField] private CinemachineFreeLook _camera;
+        [SerializeField] private Transform _stickMan;
         
         private CharacterController _controller;
         private SwipeHandler _swipeHandler;
@@ -48,13 +51,22 @@ namespace Player
 
         public void SetState(AppState state)
         {
-            _currentSpeed = state switch
+            switch (state)
             {
-                AppState.Menu => 0f,
-                AppState.Game => _speed,
-                AppState.Lose => 0f,
-                _ => _currentSpeed
-            };
+                case AppState.Menu:
+                    _currentSpeed = 0f;
+                    break;
+                case AppState.Game:
+                    _camera.Follow = _stickMan;
+                    _currentSpeed = _speed;
+                    break;
+                case AppState.Lose:
+                    _camera.Follow = null;
+                    _currentSpeed = 0f;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
