@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -47,7 +48,11 @@ namespace Items
             playerCube.transform.position = GetNewPosition();
             _cubes.Add(playerCube);
             _stickMan.transform.position = GetNewPosition();
+            
+            OnPicked?.Invoke(GetNewPosition());
         }
+
+        public event Action<Vector3> OnPicked;
 
         private Vector3 GetNewPosition()
         {
