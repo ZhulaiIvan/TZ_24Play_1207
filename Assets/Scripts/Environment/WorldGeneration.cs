@@ -11,6 +11,9 @@ namespace Environment
 
         [SerializeField, Header("Platform spawn offset")]
         private Vector3 _spawnOffset;
+        
+        [SerializeField, Header("Platforms counts")]
+        private float _platformsCount = 7f;
 
         private List<Platform> _platforms = new();
 
@@ -43,7 +46,7 @@ namespace Environment
 
         private void RemovePlatform()
         {
-            if (_platforms.Count <= 7) return;
+            if (_platforms.Count <= _platformsCount) return;
 
             _platforms[0].TriggerZone.OnTriggered -= SpawnPlatform;
             Destroy(_platforms[0].gameObject);
