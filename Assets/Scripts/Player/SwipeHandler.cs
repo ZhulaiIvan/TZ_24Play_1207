@@ -14,7 +14,7 @@ namespace Player
 
         private void Update()
         {
-            if (Input.touchCount <= 0 || _currentState == AppState.Game) return;
+            if (Input.touchCount <= 0 || _currentState != AppState.Game) return;
 
             Touch touch = Input.GetTouch(0);
 

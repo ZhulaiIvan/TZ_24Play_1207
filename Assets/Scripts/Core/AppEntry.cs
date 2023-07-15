@@ -1,11 +1,15 @@
-﻿using Player;
+﻿using System.Linq;
+using Player;
 using UnityEngine;
 using Zenject;
+using Screen = UI.Screen;
 
 namespace Core
 {
     public class AppEntry : MonoBehaviour
     {
+        [SerializeField] private Screen[] _screens;
+    
         private Data<AppState> _stateData;
         private MovementController _controller;
         private SwipeHandler _handler;
@@ -21,12 +25,23 @@ namespace Core
         {
             _stateData = new Data<AppState>(AppState.Menu);
             _stateData.OnChanged += StateUpdated;
+            
+            foreach (Screen screen in _screens)
+                screen.Initialize();
         }
 
         private void StateUpdated(AppState state)
         {
+            _screens.Where(s => s.IsShow()).ToList().ForEach(s => s.Hide());
+            _screens.Where(s => s.IsEqualState(state)).ToList().ForEach(s => s.Show());
+            
             _controller.SetState(state);
             _handler.SetState(state);
+        }
+
+        public void UpdateState(AppState appState)
+        {
+            _stateData.Value = appState;
         }
     }
 
