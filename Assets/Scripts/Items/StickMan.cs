@@ -56,5 +56,11 @@ namespace Items
                 EnableRagdoll(true);
             }
         }
+
+        public void Jump(Vector3 position)
+        {
+            transform.position = position;
+            _animator.SetTrigger("Jump");
+        }
     }
 }

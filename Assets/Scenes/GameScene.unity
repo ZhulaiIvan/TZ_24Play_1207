@@ -2439,15 +2439,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2115086953, guid: d9ce45b6decb1724584923dfb9761356, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 832749218672296684, guid: d9ce45b6decb1724584923dfb9761356,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.18
-      objectReference: {fileID: 0}
     - target: {fileID: 2076399478334519667, guid: d9ce45b6decb1724584923dfb9761356,
         type: 3}
       propertyPath: m_RootOrder
@@ -2507,11 +2498,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7064053952384046579, guid: d9ce45b6decb1724584923dfb9761356,
-        type: 3}
-      propertyPath: _speed
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7064053952384046579, guid: d9ce45b6decb1724584923dfb9761356,
         type: 3}

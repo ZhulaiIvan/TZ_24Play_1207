@@ -17,36 +17,25 @@ namespace Items
         {
             if (collision.gameObject.TryGetComponent(out Wall wall) &&
                 Math.Abs(transform.position.y - wall.transform.position.y) < 1f
-                && Math.Abs(transform.position.x - wall.transform.position.x) < 0.5f)
+                && Math.Abs(transform.position.x - wall.transform.position.x) < 0.8f)
             {
                 OnCollision?.Invoke(this);
-                StartCoroutine(DestroyCube());
+               // StartCoroutine(DestroyCube());
+               transform.SetParent(wall.transform);
+                return;
             }
-            
-            if (collision.gameObject.TryGetComponent(out Platform _))
-            {
-                TrailRenderer trailRenderer = Instantiate(_trailPrefab, transform);
-                trailRenderer.transform.position = new Vector3(
-                    transform.position.x, 
-                    trailRenderer.transform.position.y,
-                    transform.position.z);
-            }
-        }
 
-        private IEnumerator DestroyCube()
-        {
-            yield return new WaitForSeconds(2f);
-            Destroy(gameObject);
+            if (collision.gameObject.TryGetComponent(out Platform _)) 
+                Instantiate(_trailPrefab, transform);
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.TryGetComponent(out Pickup pickup)
-                && Math.Abs(transform.position.y - pickup.transform.position.y) < 0.5f)
-            {
-                Destroy(pickup.gameObject);
-                OnPickupTriggered?.Invoke();
-            }
+            if (!other.gameObject.TryGetComponent(out Pickup pickup)
+                || !(Math.Abs(transform.position.y - pickup.transform.position.y) < 0.5f)) return;
+            
+            Destroy(pickup.gameObject);
+            OnPickupTriggered?.Invoke();
         }
     }
 }

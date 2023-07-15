@@ -50,7 +50,7 @@ namespace Items
 
             playerCube.transform.position = GetNewPosition();
             _cubes.Add(playerCube);
-            _stickMan.transform.position = GetNewPosition();
+            _stickMan.Jump(GetNewPosition());
             
             OnPicked?.Invoke(GetNewPosition());
         }
