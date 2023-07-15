@@ -1,5 +1,6 @@
 using System.Linq;
 using Core;
+using Environment;
 using UnityEngine;
 using Zenject;
 
@@ -50,11 +51,11 @@ namespace Items
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.TryGetComponent(out Wall _))
-            {
-                _core.UpdateState(AppState.Lose);
-                EnableRagdoll(true);
-            }
+            if (!collision.gameObject.TryGetComponent(out Wall _)
+                && !collision.gameObject.TryGetComponent(out Platform _)) return;
+            
+            _core.UpdateState(AppState.Lose);
+            EnableRagdoll(true);
         }
 
         public void Jump(Vector3 position)
