@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf410cbc6e91425eaed79207fd10387d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stickMan: {fileID: 4183102079081512593}
+  _stickMan: {fileID: 2115086952}
   _startCube: {fileID: 7438507882734672772}
   _playerCubePrefab: {fileID: -6333071980693487057, guid: 3e955b11cb4affa4e9ad1d95907b69ad,
     type: 3}
@@ -214,21 +214,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2076399478334519667}
     m_Modifications:
-    - target: {fileID: 609659177107245106, guid: 6b5d591dbb72ac04a80d42bbb710cb7a,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: 0.011773685
-      objectReference: {fileID: 0}
-    - target: {fileID: 609659177107245106, guid: 6b5d591dbb72ac04a80d42bbb710cb7a,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: 0.40892056
-      objectReference: {fileID: 0}
-    - target: {fileID: 609659177107245106, guid: 6b5d591dbb72ac04a80d42bbb710cb7a,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.z
-      value: 0.000098060904
-      objectReference: {fileID: 0}
     - target: {fileID: 1456771919315219688, guid: 6b5d591dbb72ac04a80d42bbb710cb7a,
         type: 3}
       propertyPath: m_Drag
@@ -237,32 +222,12 @@ PrefabInstance:
     - target: {fileID: 1456771919315219688, guid: 6b5d591dbb72ac04a80d42bbb710cb7a,
         type: 3}
       propertyPath: m_Mass
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1456771919315219688, guid: 6b5d591dbb72ac04a80d42bbb710cb7a,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1456771919315219688, guid: 6b5d591dbb72ac04a80d42bbb710cb7a,
         type: 3}
       propertyPath: m_Constraints
       value: 122
-      objectReference: {fileID: 0}
-    - target: {fileID: 7526264990527161519, guid: 6b5d591dbb72ac04a80d42bbb710cb7a,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.x
-      value: 0.000000029802383
-      objectReference: {fileID: 0}
-    - target: {fileID: 7526264990527161519, guid: 6b5d591dbb72ac04a80d42bbb710cb7a,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: 0.31198838
-      objectReference: {fileID: 0}
-    - target: {fileID: 7526264990527161519, guid: 6b5d591dbb72ac04a80d42bbb710cb7a,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.z
-      value: 0.000000011175885
       objectReference: {fileID: 0}
     - target: {fileID: 8592876449704432112, guid: 6b5d591dbb72ac04a80d42bbb710cb7a,
         type: 3}
@@ -338,7 +303,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8993269104018297628}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &6067330852119403092
+--- !u!65 &2115086953
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -349,16 +314,16 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8248446, y: 1.6791575, z: 0.8260379}
-  m_Center: {x: 0.01811941, y: 0.84354055, z: 0.007943869}
---- !u!114 &4183102079081512593
+  m_Size: {x: 0.69895285, y: 1.7875509, z: 1}
+  m_Center: {x: -0.01330021, y: 0.89377546, z: 0}
+--- !u!114 &2115086952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832749218672533134}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00fcc1fc829845df98fbbc0b08d91bd5, type: 3}
   m_Name: 

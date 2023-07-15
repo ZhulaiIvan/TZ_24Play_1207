@@ -9,19 +9,19 @@ namespace UI
     public class MenuScreen : Screen
     {
         [SerializeField] private Button _startButton;
-        private AppEntry _appEntry;
+        private AppCore appCore;
 
         [Inject]
-        public void Construct(AppEntry appEntry)
+        public void Construct(AppCore appCore)
         {
-            _appEntry = appEntry;
+            this.appCore = appCore;
         }
 
         public override void Initialize()
         {
             _startButton.onClick.AddListener(() =>
             {
-                _appEntry.UpdateState(AppState.Game);
+                appCore.UpdateState(AppState.Game);
                 Hide();
             });
         }

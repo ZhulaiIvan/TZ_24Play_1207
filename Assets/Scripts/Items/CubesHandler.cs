@@ -14,6 +14,8 @@ namespace Items
         [SerializeField] private PlayerCube _playerCubePrefab;
         
         private List<PlayerCube> _cubes = new();
+        public event Action OnCollide;
+        public event Action<Vector3> OnPicked;
 
         private void Start()
         {
@@ -32,6 +34,7 @@ namespace Items
             Unsubscribe(playerCube);
             playerCube.transform.SetParent(null);
             _cubes.Remove(playerCube);
+            OnCollide?.Invoke();
         }
 
         private void Unsubscribe(PlayerCube playerCube)
@@ -51,8 +54,6 @@ namespace Items
             
             OnPicked?.Invoke(GetNewPosition());
         }
-
-        public event Action<Vector3> OnPicked;
 
         private Vector3 GetNewPosition()
         {

@@ -2,15 +2,15 @@
 using UnityEngine;
 using Zenject;
 
-public class AppEntryInstaller : MonoInstaller
+public class AppCoreInstaller : MonoInstaller
 {
-   [SerializeField] private AppEntry _appEntry;
+   [SerializeField] private AppCore appCore;
 
    public override void InstallBindings()
    {
       Container
-         .Bind<AppEntry>()
-         .FromInstance(_appEntry)
+         .Bind<AppCore>()
+         .FromInstance(appCore)
          .AsSingle()
          .NonLazy();
    }

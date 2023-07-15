@@ -10,19 +10,19 @@ namespace UI
     {
         [SerializeField] private Button _restartButton;
         
-        private AppEntry _entry;
+        private AppCore core;
 
         [Inject]
-        public void Construct(AppEntry entry)
+        public void Construct(AppCore core)
         {
-            _entry = entry;
+            this.core = core;
         }
         public override void Initialize()
         {
             _restartButton.onClick.AddListener(() =>
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-                _entry.UpdateState(AppState.Game);
+                core.UpdateState(AppState.Game);
                 Hide();
             });
         }

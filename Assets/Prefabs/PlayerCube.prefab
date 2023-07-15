@@ -159,3 +159,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afd753ac2b754e4382c94fcdb086f3f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _trailPrefab: {fileID: 8911651207793733823, guid: 85cafd40ca3ca2c449e8715253541a32,
+    type: 3}

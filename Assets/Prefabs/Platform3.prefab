@@ -69,7 +69,6 @@ GameObject:
   - component: {fileID: 4705048623700722288}
   - component: {fileID: 1355535066843790073}
   - component: {fileID: 512878896238187250}
-  - component: {fileID: 5839133883899935561}
   m_Layer: 0
   m_Name: TrackGround
   m_TagString: Untagged
@@ -142,19 +141,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5839133883899935561
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3588030195717391028}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8635103698508136598
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,6 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8635103698508136599}
   - component: {fileID: 410561387873889139}
+  - component: {fileID: 2541686439032908228}
   m_Layer: 0
   m_Name: Platform3
   m_TagString: Untagged
@@ -208,6 +195,19 @@ MonoBehaviour:
   _renderer: {fileID: 512878896238187250}
   _moveSpeed: 10
   _triggerZone: {fileID: 1048110343639732986}
+--- !u!65 &2541686439032908228
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8635103698508136598}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8786976749814007303
 GameObject:
   m_ObjectHideFlags: 0

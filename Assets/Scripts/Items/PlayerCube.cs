@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Environment;
 using UnityEngine;
 
 namespace Items
@@ -7,6 +8,8 @@ namespace Items
     [RequireComponent(typeof(Collider), typeof(Rigidbody))]
     public class PlayerCube : MonoBehaviour
     {
+        [SerializeField] private TrailRenderer _trailPrefab;
+
         public Action OnPickupTriggered;
         public Action<PlayerCube> OnCollision;
 
@@ -14,10 +17,19 @@ namespace Items
         {
             if (collision.gameObject.TryGetComponent(out Wall wall) &&
                 Math.Abs(transform.position.y - wall.transform.position.y) < 1f
-                && Math.Abs(transform.position.x - wall.transform.position.x) < 1f)
+                && Math.Abs(transform.position.x - wall.transform.position.x) < 0.5f)
             {
                 OnCollision?.Invoke(this);
                 StartCoroutine(DestroyCube());
+            }
+            
+            if (collision.gameObject.TryGetComponent(out Platform _))
+            {
+                TrailRenderer trailRenderer = Instantiate(_trailPrefab, transform);
+                trailRenderer.transform.position = new Vector3(
+                    transform.position.x, 
+                    trailRenderer.transform.position.y,
+                    transform.position.z);
             }
         }
 
